@@ -7,25 +7,24 @@
 
 namespace Spryker\Client\ProductConfigurationExtension\Dependency\Plugin;
 
-use Generated\Shared\Transfer\ProductConfiguratorRedirectTransfer;
 use Generated\Shared\Transfer\ProductConfiguratorRequestTransfer;
 
 /**
- * Use this plugin to prepare configurator page requests.
+ * Use this plugin to extend product configurator request.
  */
-interface ProductConfiguratorRequestPluginInterface
+interface ProductConfiguratorRequestExpanderPluginInterface
 {
     /**
      * Specification:
-     * - Resolves configurator page redirect information for the provided product configuration.
+     * - Expands product configurator request with additional data.
      *
      * @api
      *
      * @param \Generated\Shared\Transfer\ProductConfiguratorRequestTransfer $productConfiguratorRequestTransfer
      *
-     * @return \Generated\Shared\Transfer\ProductConfiguratorRedirectTransfer
+     * @return \Generated\Shared\Transfer\ProductConfiguratorRequestTransfer
      */
-    public function resolveProductConfiguratorRedirect(
+    public function expand(
         ProductConfiguratorRequestTransfer $productConfiguratorRequestTransfer
-    ): ProductConfiguratorRedirectTransfer;
+    ): ProductConfiguratorRequestTransfer;
 }
